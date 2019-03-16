@@ -1,0 +1,58 @@
+pi() {
+  return 3.14
+}
+
+pow(number, exp) {
+  value = 1
+  if exp > 0 {
+    for i in range(1, exp) {
+      value = value * number
+    }
+  } else if exp < 0 {
+    for i in range(1, -exp) {
+      value = value / number
+    }
+  }
+  return value
+}
+
+fact(number) {
+  value = 1
+  if number > 0 {
+    for i in range(1, number) {
+      value = value * (i + 1)
+    }
+  }
+  return value
+}
+
+rad(angle) {
+  unit = unit(angle)
+  unitless = angle / (angle * 0 + 1)
+  if unit == deg {
+    unitless = unitless / 180 * pi()
+  }
+  return unitless
+}
+
+sin(angle) {
+  sin = 0
+  angle = rad(angle)
+  for i in range(0, 10) {
+    sin = sin + pow(-1, i) * pow(angle, (2 * i + 1)) / fact(2 * i + 1)
+  }
+  return sin
+}
+
+cos(angle) {
+  cos = 0
+  angle = rad(angle)
+  for i in range(0, 10) {
+    cos = cos + pow(-1, i) * pow(angle, 2 * i) / fact(2 * i)
+  }
+  return cos
+}
+
+tan(angle) {
+  return sin(angle) / cos(angle)
+}
