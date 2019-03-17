@@ -14,11 +14,13 @@ export const imageIsExist = function(url) {
         var img = new Image();
         img.onload = function () {
             if (this.complete == true){
-                resolve(true)
+                resolve(true);
+                img = null;
             }
         }
         img.onerror = function () {
-            resolve(false)
+            resolve(false);
+            img = null;
         }
         img.src = url;
     })
