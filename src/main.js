@@ -11,8 +11,6 @@ Vue.directive('real-img', async function (el, binding) {
         let exist = await imageIsExist(imgURL);
         if (exist) {
             el.setAttribute('src', imgURL);
-        } else {
-            el.setAttribute('src', require('./assets/logo.png'));
         }
     }
 })
