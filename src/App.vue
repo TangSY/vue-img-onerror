@@ -14,7 +14,7 @@
         </div>
         <ul class="img-list">
             <li v-for="(item,index) in imgList" :key="index">
-                <img src="./assets/logo.png" v-real-img="item" alt="">
+                <img src="./assets/logo.png" v-real-img="item" default-img="https://hxkj.vip/demo/vueImgOnerror/img/logo.16af1ba4.png" alt="">
             </li>
         </ul>
     </div>
@@ -42,7 +42,7 @@
             },
             delImg() {
                 if (this.imgList.length === 0) return;
-                this.imgList.shift(this.addImgSrc);
+                this.imgList.shift();
             }
         }
     }
